@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+
+         <link rel="stylesheet" href="css/stylesheet.css" type="text/css"/>
+        <script src="js/jquery.js"></script>
+         <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'></script>
+        
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Ilustraciones</h1><span></span>
+            <div id="mainpicture"></div>
+            <div id="littlepictures">
+                <div>
+                <img class="littlepicture" src="img/img1-thumb.jpg" alt=""/>
+                </div>
+                <div>
+                <img class="littlepicture" src="img/img2-thumb.jpg" alt=""/>
+                </div>
+                <div>
+                <img class="littlepicture" src="img/img3-thumb.jpg" alt=""/>
+                </div>
+                <div>
+                <img class="littlepicture" src="img/img4-thumb.jpg" alt=""/>
+                </div>
+                <div>
+                <img class="littlepicture" src="img/img5-thumb.jpg" alt=""/>
+                </div>
+                <div>
+                <img class="littlepicture" src="img/img6-thumb.jpg" alt=""/>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $imagen = $("<img class='centerimg' src='img/img1-lg.jpg' alt='001'/>");   
+             
+                $("#mainpicture").after($imagen);
+            
+                $(".littlepicture").click(function(){
+                    $imageclick = $(this).html();
+                    $("#mainpicture").after($imageclick);
+                });
+            });
+        </script>
+    </body>
+</html>

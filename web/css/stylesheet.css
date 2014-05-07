@@ -1,0 +1,30 @@
+#wrapper
+{
+   margin: 0 auto;
+   width: 100%!important;
+}
+.centerimg
+{
+    width: 100%;
+    border: 5px solid white; 
+    box-shadow: 1px 1px 1px;
+}
+#littlepictures
+{
+    width: 100%;
+}
+#littlepictures > div
+{
+    margin: 5px;
+    float: left;
+    width: 16%;
+    background-color: white;
+    border: 2px solid black; 
+}
+.littlepicture
+{
+    padding: 3px;
+    width: 95%;
+    
+
+}
