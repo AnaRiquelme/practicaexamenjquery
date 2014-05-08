@@ -9,33 +9,33 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
 
-         <link rel="stylesheet" href="css/stylesheet.css" type="text/css"/>
+        <link rel="stylesheet" href="css/stylesheet.css" type="text/css"/>
         <script src="js/jquery.js"></script>
-         <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'></script>
-        
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'></script>
+
     </head>
     <body>
         <div id="wrapper">
             <h1>Ilustraciones</h1><span></span>
-            <div id="mainpicture"></div>
+            <div id="mainpicture"><div class="envoltorio"></div></div>
             <div id="littlepictures">
-                <div>
-                <img class="littlepicture" src="img/img1-thumb.jpg" alt=""/>
+                <div class="unhover">
+                    <img class="littlepicture" src="img/img1-thumb.jpg" alt=""/>
                 </div>
-                <div>
-                <img class="littlepicture" src="img/img2-thumb.jpg" alt=""/>
+                <div class="unhover">
+                    <img class="littlepicture" src="img/img2-thumb.jpg" alt=""/>
                 </div>
-                <div>
-                <img class="littlepicture" src="img/img3-thumb.jpg" alt=""/>
+                <div class="unhover">
+                    <img class="littlepicture" src="img/img3-thumb.jpg" alt=""/>
                 </div>
-                <div>
-                <img class="littlepicture" src="img/img4-thumb.jpg" alt=""/>
+                <div class="unhover">
+                    <img class="littlepicture" src="img/img4-thumb.jpg" alt=""/>
                 </div>
-                <div>
-                <img class="littlepicture" src="img/img5-thumb.jpg" alt=""/>
+                <div class="unhover">
+                    <img class="littlepicture" src="img/img5-thumb.jpg" alt=""/>
                 </div>
-                <div>
-                <img class="littlepicture" src="img/img6-thumb.jpg" alt=""/>
+                <div class="unhover">
+                    <img class="littlepicture" src="img/img6-thumb.jpg" alt=""/>
                 </div>
             </div>
         </div>
@@ -43,11 +43,29 @@ and open the template in the editor.
             $(document).ready(function(){
                 $imagen = $("<img class='centerimg' src='img/img1-lg.jpg' alt='001'/>");   
              
-                $("#mainpicture").after($imagen);
+                $(".envoltorio").append($imagen);
             
-                $(".littlepicture").click(function(){
-                    $imageclick = $(this).html();
-                    $("#mainpicture").after($imageclick);
+                $(".unhover").bind("mouseenter", function(){
+                    
+                    $(this).removeClass("unhover").addClass("hover");
+                     
+                });
+                $(".unhover").bind("mouseleave", function(){
+                    $(this).removeClass("hover").addClass("unhover");
+                });
+                $(".littlepicture").bind("click", function(){
+                    var peque = $(this).attr("src");
+                   var silabas = peque.split("-");
+                   var o = "-lg.jpg";
+                   for(var i = 0; i < silabas.length; i++){
+                      if(i == 0){
+                          res = silabas[i] + o;
+                      }
+                      
+                   }
+                   
+                 
+                   $(".envoltorio").after("<img src='" + res +"' alt='' />");
                 });
             });
         </script>

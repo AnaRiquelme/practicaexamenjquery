@@ -5,26 +5,37 @@
 }
 .centerimg
 {
-    width: 100%;
-    border: 5px solid white; 
-    box-shadow: 1px 1px 1px;
+    padding: 18px;
+    width: 96%;
+
 }
-#littlepictures
+#mainpicture
 {
-    width: 100%;
-}
-#littlepictures > div
-{
-    margin: 5px;
-    float: left;
-    width: 16%;
+    width: 100%;    
     background-color: white;
-    border: 2px solid black; 
+    border: 2px solid #777; 
+}
+#littlepictures > .unhover
+{
+    margin: 10px;
+    float: left;
+    width: 14%;
+    background-color: white;
+    border: 2px solid #777; 
+}
+.hover
+{
+    margin: 10px;
+    float: left;
+    width: 14%;
+    background-color: white;
+     border: 2px solid yellow; 
 }
 .littlepicture
 {
-    padding: 3px;
-    width: 95%;
+    padding-top: 10px;
+    padding: 7px;
+    width: 90%;
     
 
 }
